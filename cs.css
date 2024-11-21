@@ -9,6 +9,9 @@
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    animation: fading 2s;
+    transform: translateY(0); /* Start with no translation */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
   }
   
   header {
@@ -96,6 +99,7 @@
       color: #333;
       text-align: center;
       margin-bottom: 20px;
+      margin-top: 10px;
   }
   .tips h3 {
     font-size: 37px;
@@ -121,6 +125,7 @@
   .services {
     padding: 50px 20px;
     text-align: center;
+    animation: hoverUp 0.8s ease-out forwards;
   }
   
   .services h2 {
@@ -139,7 +144,7 @@
     transition: all .2s ease-in-out; 
   }
   .service-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     color: black;
   }
   .service-card h3 {
@@ -191,6 +196,8 @@
     width: 100%;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     padding-bottom: 40px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
   
 footer-content {
@@ -237,5 +244,22 @@ footer a:visited {
   .terms-button {
       font-size: 14px;
       padding: 8px 16px;
+  }
+}
+@keyframes fading {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+@keyframes hoverUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-10px);
   }
 }
